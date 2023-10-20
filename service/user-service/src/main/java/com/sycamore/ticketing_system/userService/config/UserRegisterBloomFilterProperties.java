@@ -15,26 +15,26 @@
  * limitations under the License.
  */
 
-package com.sycamore.ticketing_system.cache.config;
+package com.sycamore.ticketing_system.userService.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * 缓存穿透布隆过滤器
+ * 用户注册布隆过滤器属性配置
  *
  *
  */
 @Data
-@ConfigurationProperties(prefix = BloomFilterPenetrateProperties.PREFIX)
-public class BloomFilterPenetrateProperties {
+@ConfigurationProperties(prefix = UserRegisterBloomFilterProperties.PREFIX)
+public final class UserRegisterBloomFilterProperties {
 
-    public static final String PREFIX = "framework.cache.redis.bloom-filter.default";
+    public static final String PREFIX = "framework.cache.redis.bloom-filter.user-register";
 
     /**
-     * 布隆过滤器默认实例名称
+     * 用户注册布隆过滤器实例名称
      */
-    private String name = "cache_penetration_bloom_filter";
+    private String name = "user_register_cache_penetration_bloom_filter";
 
     /**
      * 每个元素的预期插入量
