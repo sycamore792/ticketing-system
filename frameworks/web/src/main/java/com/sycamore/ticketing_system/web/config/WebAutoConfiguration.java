@@ -21,6 +21,7 @@ package com.sycamore.ticketing_system.web.config;
 import com.sycamore.ticketing_system.web.handler.GlobalExceptionHandler;
 import com.sycamore.ticketing_system.web.initialize.InitializeDispatcherServletController;
 import com.sycamore.ticketing_system.web.initialize.InitializeDispatcherServletHandler;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.ConfigurableEnvironment;
@@ -33,6 +34,7 @@ import org.springframework.web.client.RestTemplate;
  *
  *
  */
+@Slf4j
 public class WebAutoConfiguration {
 
     public final static String INITIALIZE_PATH = "/initialize/dispatcher-servlet";

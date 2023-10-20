@@ -82,11 +82,11 @@ framework:
     safa-mode: true
   cache:
     redis:
-      prefix: "ticketing_system:"
       value-timeout: 50000
       bloom-filter:
         user-register:
           name: user_register_cache_penetration_bloom_filter${unique-name:}
+          enabled: true
 
 management:
   endpoints:

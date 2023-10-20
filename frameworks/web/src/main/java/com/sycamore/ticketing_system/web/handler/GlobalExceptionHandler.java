@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import java.util.Optional;
 
 /**
- * THIS IS A CLASS
  *
  * @PROJECT_NAME: ticketing_system
  * @CLASS_NAME: GlobalExceptionHandler
@@ -53,7 +52,7 @@ public class GlobalExceptionHandler {
     /**
      * 拦截应用内抛出的异常
      */
-    @ExceptionHandler(value = {AbstractException.class})
+    @ExceptionHandler(value = AbstractException.class)
     public Result abstractException(HttpServletRequest request, AbstractException ex) {
         if (ex.getCause() != null) {
             log.error("[{}] {} [ex] {}", request.getMethod(), request.getRequestURL().toString(), ex.toString(), ex.getCause());

@@ -41,6 +41,7 @@ framework:
       bloom-filter:
         user-register:
           name: user_register_cache_penetration_bloom_filter${unique-name:}
+          enabled: true
 
 management:
   endpoints:

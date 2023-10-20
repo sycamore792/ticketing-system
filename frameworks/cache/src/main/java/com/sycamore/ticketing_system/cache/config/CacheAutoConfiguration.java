@@ -21,6 +21,7 @@ import com.sycamore.ticketing_system.cache.service.impl.StringRedisTemplateProxy
 import com.sycamore.ticketing_system.cache.toolkit.RedisKeySerializer;
 import lombok.AllArgsConstructor;
 
+import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RBloomFilter;
 import org.redisson.api.RedissonClient;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -34,6 +35,7 @@ import org.springframework.data.redis.core.StringRedisTemplate;
  *  
  */
 @AllArgsConstructor
+@Slf4j
 @EnableConfigurationProperties({RedisDistributedProperties.class, BloomFilterPenetrateProperties.class})
 public class CacheAutoConfiguration {
 
