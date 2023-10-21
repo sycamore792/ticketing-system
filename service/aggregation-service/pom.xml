@@ -30,6 +30,11 @@
             <version>${project.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.sycamore.ticketing_system</groupId>
+            <artifactId>ticketing_system-service-ticket-service</artifactId>
+            <version>${project.version}</version>
+        </dependency>
 <!--        <dependency>-->
 <!--            <groupId>org.opengoofy.index12306</groupId>-->
 <!--            <artifactId>index12306-ticket-service</artifactId>-->

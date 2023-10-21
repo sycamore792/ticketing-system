@@ -30,16 +30,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 //@EnableDynamicThreadPool
 @SpringBootApplication(scanBasePackages = {
         "com.sycamore.ticketing_system.userService",
-//        "org.opengoofy.index12306.biz.ticketservice",
-//        "org.opengoofy.index12306.biz.orderservice",
-//        "org.opengoofy.index12306.biz.payservice"
+        "com.sycamore.ticketing_system.ticketService"
 })
 //@EnableRetry
 @MapperScan(value = {
         "com.sycamore.ticketing_system.userService.dao.mapper",
-//        "org.opengoofy.index12306.biz.ticketservice.dao.mapper",
-//        "org.opengoofy.index12306.biz.orderservice.dao.mapper",
-//        "org.opengoofy.index12306.biz.payservice.dao.mapper"
+        "com.sycamore.ticketing_system.ticketservice.dao.mapper"
 })
 //@EnableFeignClients(value = {
 //        "org.opengoofy.index12306.biz.ticketservice.remote",

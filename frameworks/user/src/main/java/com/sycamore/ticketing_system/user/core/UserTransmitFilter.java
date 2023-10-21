@@ -23,6 +23,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
 import jakarta.servlet.http.HttpServletRequest;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.StringUtils;
 
 import java.io.IOException;
@@ -35,12 +36,14 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  *
  *  
  */
+@Slf4j
 public class UserTransmitFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
         String userId = httpServletRequest.getHeader(UserConstant.USER_ID_KEY);
+
         if (StringUtils.hasText(userId)) {
             String userName = httpServletRequest.getHeader(UserConstant.USER_NAME_KEY);
             String realName = httpServletRequest.getHeader(UserConstant.REAL_NAME_KEY);
@@ -57,7 +60,10 @@ public class UserTransmitFilter implements Filter {
                     .realName(realName)
                     .token(token)
                     .build();
+            log.info("userInfoDTO: {}" , userInfoDTO);
             UserContext.setUser(userInfoDTO);
+        }else {
+            log.info("userId is null");
         }
         try {
             filterChain.doFilter(servletRequest, servletResponse);
